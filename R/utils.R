@@ -174,9 +174,7 @@ most_recent_mlb_season <- function() {
 # Functions for custom class
 # turn a data.frame into a tibble/baseballr_data
 make_baseballr_data <- function(df, type, timestamp){
-  out <- df %>%
-    tidyr::as_tibble()
-  
+  out <- df
   class(out) <- c("baseballr_data","tbl_df","tbl","data.table","data.frame")
   attr(out,"baseballr_timestamp") <- timestamp
   attr(out,"baseballr_type") <- type
